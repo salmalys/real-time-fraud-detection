@@ -1,0 +1,12 @@
+FROM python:3.11-slim
+
+# Installation des dépendances
+RUN pip install kafka-python faker
+
+COPY kafka_producer.py /app/kafka_producer.py
+
+# Répertoire de travail
+WORKDIR /app
+
+# Commande par défaut
+CMD ["python", "kafka_producer.py"]
